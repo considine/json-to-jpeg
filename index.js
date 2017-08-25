@@ -12,7 +12,7 @@ var wordLengthUtils = require("./lib/wordlengthutils.js");
 const DATA_TABLE = require("./table-data2.js");
 var DataController = require("./lib/table-controller");
 wordLengthUtils.columnCheck(DATA_TABLE);
-var dc = new DataController(DATA_TABLE, false, CanvasConfig.contextWrapper);
+var dc = new DataController(DATA_TABLE, CanvasConfig.contextWrapper);
 dc.writeRows();
 dc.printImage();
 //
