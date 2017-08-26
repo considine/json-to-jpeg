@@ -1,5 +1,5 @@
 {
-  "name": "canvas2",
+  "name": "table-json-to-jpeg",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/test-scripts"
   },
   "author": "Jack Considine <jackconsidine3@gmail.com> (jackconsidine.wordpress.com)",
   "license": "ISC",
