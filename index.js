@@ -9,14 +9,10 @@ var wordLengthUtils = require("./lib/wordlengthutils.js");
 
 
 // Get data
-const DATA_TABLE = require("./table-data2.js");
-var DataController = require("./lib/table-controller");
+const DATA_TABLE = require("./tests/test-data");
+var DataController = require("./lib/table-controller-v2");
 wordLengthUtils.columnCheck(DATA_TABLE);
+
 var dc = new DataController(DATA_TABLE, CanvasConfig.contextWrapper);
-dc.writeRows();
-dc.printImage();
-//
-//
-// // console.log("<img src='" + CanvasConfig.canvas.toDataURL() + "'>");
-//
-// wordLengthUtils.columnCheck(DATA_TABLE);
+
+module.exports = dc;
