@@ -8,11 +8,14 @@ var CanvasConfig = require("./lib/canvasconfig.js");
 var wordLengthUtils = require("./lib/wordlengthutils.js");
 
 
-// Get data
-const DATA_TABLE = require("./tests/test-data");
-var DataController = require("./lib/table-controller-v2");
-wordLengthUtils.columnCheck(DATA_TABLE);
+function canvasDriver (data) {
+  var DataController = require("./lib/table-controller-v2");
+  wordLengthUtils.columnCheck(data);
+  var dc = new DataController(data, CanvasConfig.contextWrapper);
+  return dc;
+}
 
-var dc = new DataController(DATA_TABLE, CanvasConfig.contextWrapper);
 
-module.exports = dc;
+
+
+module.exports = canvasDriver;
