@@ -4,10 +4,10 @@
 * 2017-08-24
 */
 // Test Data
-var testdata = require("./test-data.js");
-var CanvasConfig = require("../lib/canvasconfig.js");
+var testdata = require("../test-data.js");
+var CanvasConfig = require("../../lib/canvasconfig.js");
 // Controller
-var TableController = new require("../lib/table-controller-v2.js");
+var TableController = new require("../../lib/table-controller-v2.js");
 
 
 var assert = require("assert");
@@ -15,7 +15,9 @@ describe('TableController', function () {
   // get private methods
   function generateTestController (data) {
     tcdata = (data) ? data : testdata;
-    return new TableController(tcdata, CanvasConfig.contextWrapper);
+    tc =  new TableController(tcdata, CanvasConfig.contextWrapper);
+    tc.__testing__.initializeValues();
+    return tc;
   }
   function generateTestDataByRows (rows) {
     return {
@@ -80,7 +82,7 @@ describe('TableController', function () {
     });
 
     it ('should return a smaller proportion for a column that is not bold vs another that is, with the same text', function () {
-      var words = ["hi", "hello", "goodbye", "yello"];
+      var words = ["hi", "hello", "goodbye", "yellho"];
       for (var i=0; i<words.length; i++) {
         var col1 = {text : words[i], bold : false};
         var col2 = {text : words[i], bold : true};
@@ -91,7 +93,12 @@ describe('TableController', function () {
         assert.equal(true, (tcontroller.colWidths[1] > tcontroller.colWidths[0]));
       }
 
-    })
+    });
+    it ("should not throw an error when running through test data", function () {
+      var tcontroller =generateTestController();
+      tcontroller.__testing__.getMinWidths();
+      tcontroller.__testing__.getProportionalWidth();
+    });
   });
 
 

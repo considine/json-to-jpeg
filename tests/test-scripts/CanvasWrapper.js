@@ -6,7 +6,7 @@
 
 var assert = require("assert");
 
-var contextWrapper = require("../lib/canvasconfig").contextWrapper;
+var contextWrapper = require("../../lib/canvasconfig").contextWrapper;
 
 describe ("CanvasConfig", function() {
   it ("Should judge bolded text to be larger than normal text", function () {
@@ -17,8 +17,6 @@ describe ("CanvasConfig", function() {
     ];
     for (var i=0; i<testWords.length; i++) {
       // console.log
-      console.log(contextWrapper.getTextSize(testWords[i], false).width);
-      console.log(contextWrapper.getTextSize(testWords[i], true).width);
       assert.equal(contextWrapper.getTextSize(testWords[i], false).width  < contextWrapper.getTextSize(testWords[i], true).width, true );
     }
 

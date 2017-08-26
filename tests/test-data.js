@@ -28,7 +28,7 @@ module.exports =
       },
       {
         "bold": false,
-        "text": "col3 row2 some"
+        "text": "col3 row2 some please excuse steve she's gotta get her TREE fed blah blah blah"
       }
     ],
     [
@@ -41,7 +41,7 @@ module.exports =
         "text": "Michael Scott"
       },
       {
-        "bold": false,
+        "bold": true,
         "text": "123"
       }
     ],

@@ -4,8 +4,8 @@
 * 2017-08-24
 */
 var assert = require("assert");
-require("../lib/utils/transpose.js")();
-var utilityTypes = require("../lib/utils/types.js");
+require("../../lib/utils/transpose.js")();
+var utilityTypes = require("../../lib/utils/types.js");
 
 /**
  * quick convert to json for array comparisonss
