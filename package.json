@@ -1,6 +1,6 @@
 {
   "name": "table-json-to-jpeg",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Converts JSON 2d array (array of rows, rows = array of cells) into jpeg of that table using node-canvas",
   "main": "index.js",
   "directories": {
