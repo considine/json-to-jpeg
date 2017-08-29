@@ -15,18 +15,20 @@ npm install table-json-to-jpeg --save
 Note: Depends on [Node Canvas](https://github.com/Automattic/node-canvas "Node Canvas") which depends Cairo and Pango. Head over to that repo, and follow the quick instruction for the easy install based on your OS.
 
 ## Usage
-```
+```javascript
+ var TableToJpg = require("table-json-to-jpeg");
+
 var data = [
 	['col1', 'col2', 'col3'],
 	['col1 row2', 'col2', 'col3'],
 	['col1 row3', 'col2', 'col3']
-]
+];
 new TableToJpg(data).printImage("outfile.jpg").then(() => {
-        console.log("successfully created table")
-      })
-      .catch((e) => {
-        console.log("error creating table " + e.message);
-      });
+    console.log("successfully created table")
+  })
+  .catch((e) => {
+    console.log("error creating table " + e.message);
+  });
 ```
 
 Note: use Array of Rows, which = array of columns as input data. 
